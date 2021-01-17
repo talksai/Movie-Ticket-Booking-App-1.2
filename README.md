@@ -12,4 +12,7 @@ App allows registered user to book ticket for a show .
 app allows admin to add/edit show .
 
 
+# Assumption 
+
+
  
