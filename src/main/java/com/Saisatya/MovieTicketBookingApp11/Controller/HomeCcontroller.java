@@ -63,6 +63,10 @@ public class HomeCcontroller {
 
         return  showService.findByMovie(id);
     }
+    @PostMapping(name = "/search")
+    public List<Movie> getMovies(@RequestParam String movieNmae){
+        return movieService.findByName(movieNmae);
+    }
     //registered user   --------Booking
     @PostMapping(name = "/shows/{id}/booking")
     public String Booking(@PathVariable int id, @RequestParam Booking booking){

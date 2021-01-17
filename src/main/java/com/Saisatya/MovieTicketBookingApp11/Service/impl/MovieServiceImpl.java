@@ -31,4 +31,9 @@ public class MovieServiceImpl implements MovieService {
     public List<Movie> getAllMovies() {
         return movieDao.findAll();
     }
+
+    @Override
+    public List<Movie> findByName(String name) {
+       return movieDao.findByName(name);
+    }
 }

@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface MovieService {
     public List<Movie> getAllMovies();
+    public List<Movie> findByName(String name);
     public Movie getOneMovies(int id);
 }
