@@ -29,7 +29,7 @@ public class AdminController {
     MovieDao movieDao;
 
     @PostMapping(path = "/admin/cinemahal")
-    public String addCinemaHall( @RequestParam CinemaHall cinemaHall){
+    public String addCinemaHall( @RequestBody CinemaHall cinemaHall){
         cinemaHallDao.save(cinemaHall);
         adressDao.save(cinemaHall.getAddress());
 
@@ -63,7 +63,7 @@ public class AdminController {
 
     }
     @PostMapping(path = "/admin/cinemahall/{id}/show")
-    public String addShow(@PathVariable int id, @RequestParam Show show,@RequestParam Movie movie) throws Exception {
+    public String addShow(@PathVariable int id, @RequestBody Show show,@RequestBody Movie movie) throws Exception {
         Optional<CinemaHall> cinemaHall2=cinemaHallDao.findById(id);
         if(cinemaHall2.isEmpty()){
             throw new Exception("cinema hall not found");
@@ -82,7 +82,7 @@ public class AdminController {
         return  "sucess";
     }
     @PostMapping("/admin/movies")
-    public String addMovie(@RequestParam Movie movie) {
+    public String addMovie(@RequestBody Movie movie) {
         movieDao.save(movie);
 
 
